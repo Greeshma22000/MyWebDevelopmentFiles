@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation Bar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class = "main">
+        <video loop autoplay muted plays-inline class = "back-vid">
+            <source src ="./galaxy.mp4" type = "video/mp4">
+        </video>
+        <nav>
+            <h1>Greeshma Sri</h1>
+            <ul>
+                <li class = "hideEl"><a href="#">Home</a></li>
+                <li class = "hideEl"><a href="#">Services</a></li>
+                <li class = "hideEl"><a href="#">about</a></li>
+                <li class = "hideEl"><a href="#">Feedback</a></li>
+                <li class = "hideEl"><a href="#">Login</a></li>
+                <svg onclick = showSidebar() class = "menu-icon" xmlns = "http://www.w3.org/2000/svg" height = "24px" viewBox = "0 -960 960 960" width = "24px" fill="black"><path d = "M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></svg>
+            </ul>
+            <ul class = "sidebar">
+                <svg onclick = closeSidebar() class = "close-icon" xmlns = "http://www.w3.org/2000/svg" height = "30px" viewBox = "0 -960 960 960" width = "30px" fill = "black"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">Feedback</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
