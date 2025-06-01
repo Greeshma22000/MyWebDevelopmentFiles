@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Freelancer Toolkit</title>
+</head>
+<body>
+    <section id="projectExplanation" style="padding:20px; max-width:800px; margin:auto; font-family: Arial, sans-serif;">
+  <h2>Welcome to Freelancer Dashboard</h2>
+  <p>
+    The <strong>Freelancer Dashboard</strong> is your all-in-one toolkit designed specifically for freelancers and project managers to organize their work efficiently.
+  </p>
+  <h3>Features Included:</h3>
+  <ul>
+    <li><strong>Project Timeline:</strong> Plan and manage your project tasks visually. Add, reorder by drag-and-drop, and delete tasks along with their durations.</li>
+    <li><strong>Client Management:</strong> Keep a list of your clients with their contact info to stay organized and ready for communication.</li>
+    <li><strong>Invoice Generator:</strong> Create detailed invoices easily by adding line items, quantities, rates, and save them for future reference.</li>
+    <li><strong>Pomodoro Timer & Notes:</strong> Stay focused with a built-in Pomodoro timer and jot down quick project notes—all in one place.</li>
+    <li><strong>Dark Mode:</strong> Toggle between light and dark themes for a comfortable viewing experience any time.</li>
+  </ul>
+  <p>
+    This dashboard leverages modern web technologies like HTML, CSS, and JavaScript to give you a smooth, interactive experience right in your browser. All your data is saved locally on your device using <em>localStorage</em>, so your information stays private and instantly accessible.
+  </p>
+  <p>
+    Start managing your freelance projects more productively and get more done with less hassle!
+  </p>
+</section>
+
+    <header>
+    <h1>ProFreelancer Dashboard</h1>
+    <button id="themeToggle">🌙 Dark Mode</button>
+  </header>
+
+  <nav>
+    <button class="tab-btn active" data-tab="timeline">Project Timeline</button>
+    <button class="tab-btn" data-tab="clients">Clients</button>
+    <button class="tab-btn" data-tab="invoices">Invoices</button>
+    <button class="tab-btn" data-tab="pomodoro">Pomodoro & Notes</button>
+  </nav>
+
+  <main>
+    <!-- Timeline -->
+    <section id="timeline" class="tab-content active">
+      <h2>Project Timeline</h2>
+      <form id="taskForm">
+        <input type="text" id="taskName" placeholder="Task name" required />
+        <input type="number" id="taskDuration" placeholder="Duration (days)" min="1" required />
+        <button type="submit">Add Task</button>
+      </form>
+      <div id="timelineContainer"></div>
+    </section>
+
+    <!-- Clients -->
+    <section id="clients" class="tab-content">
+      <h2>Clients</h2>
+      <form id="clientForm">
+        <input type="text" id="clientName" placeholder="Client name" required />
+        <input type="email" id="clientEmail" placeholder="Email" required />
+        <button type="submit">Add Client</button>
+      </form>
+      <ul id="clientList"></ul>
+    </section>
+
+    <!-- Invoices -->
+    <section id="invoices" class="tab-content">
+      <h2>Invoice Generator</h2>
+      <form id="invoiceForm">
+        <input type="text" id="invoiceClient" placeholder="Client name" required />
+        <input type="text" id="invoiceDesc" placeholder="Service Description" required />
+        <input type="number" id="invoiceQty" placeholder="Quantity" min="1" required />
+        <input type="number" id="invoiceRate" placeholder="Rate per unit" min="0" step="0.01" required />
+        <button type="submit">Add Line Item</button>
+      </form>
+      <table id="invoiceTable">
+        <thead>
+          <tr><th>Description</th><th>Qty</th><th>Rate</th><th>Total</th><th>Action</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div id="invoiceTotal">Total: $0.00</div>
+      <button id="saveInvoiceBtn">Save Invoice</button>
+      <div id="savedInvoices"></div>
+    </section>
+
+    <!-- Pomodoro & Notes -->
+    <section id="pomodoro" class="tab-content">
+      <h2>Pomodoro Timer & Notes</h2>
+      <div id="pomodoroTimer">
+        <div id="timerDisplay">25:00</div>
+        <button id="startPauseBtn">Start</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+      <textarea id="projectNotes" placeholder="Write your project notes here..."></textarea>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

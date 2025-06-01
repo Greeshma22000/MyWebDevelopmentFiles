@@ -1,0 +1,271 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: #f0f2f5;
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+#themeToggle {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s ease;
+}
+#themeToggle:hover {
+  color: #cce5ff;
+}
+nav {
+  display: flex;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+nav button {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+nav button:hover,
+nav button.active {
+  background: #007bff;
+  color: white;
+}
+main {
+  flex-grow: 1;
+  padding: 1rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+  width: 100%;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+
+/* Forms */
+form {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+form input {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  min-width: 120px;
+}
+form button {
+  padding: 0.5rem 1.25rem;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Timeline */
+#timelineContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 1rem 0;
+  gap: 0.5rem;
+}
+.timeline-task {
+  min-width: 120px;
+  background: #007bff;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: grab;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+.timeline-task.dragging {
+  opacity: 0.7;
+  background: #0056b3;
+}
+.timeline-task .duration {
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  font-weight: 600;
+}
+
+/* Clients */
+#clientList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#clientList li {
+  background: #e2e6ea;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#clientList li .client-info {
+  flex-grow: 1;
+}
+#clientList li button {
+  background: #dc3545;
+  border: none;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#clientList li button:hover {
+  background: #a71d2a;
+}
+
+/* Invoices */
+#invoiceTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.5rem;
+}
+#invoiceTable th, #invoiceTable td {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+#invoiceTable th {
+  background: #007bff;
+  color: white;
+}
+#invoiceTable td button {
+  background: #dc3545;
+  border: none;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#invoiceTable td button:hover {
+  background: #a71d2a;
+}
+#invoiceTotal {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+#savedInvoices {
+  margin-top: 1rem;
+}
+
+/* Pomodoro Timer */
+#pomodoroTimer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+#timerDisplay {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: monospace;
+  width: 140px;
+  text-align: center;
+  user-select: none;
+}
+#pomodoro button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#pomodoro button:hover {
+  background-color: #0056b3;
+}
+#projectNotes {
+  width: 100%;
+  min-height: 150px;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  resize: vertical;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #121212;
+  color: #ddd;
+}
+body.dark header {
+  background-color: #222;
+}
+body.dark nav button.active,
+body.dark nav button:hover {
+  background-color: #0056b3;
+}
+body.dark form input,
+body.dark #projectNotes {
+  background-color: #222;
+  border: 1px solid #555;
+  color: #ddd;
+}
+body.dark #clientList li {
+  background: #333;
+}
+body.dark #invoiceTable th {
+  background: #0056b3;
+}
+body.dark #invoiceTable td, 
+body.dark #invoiceTable th {
+  border-color: #555;
+}
+body.dark #invoiceTable td button {
+  background: #bb4444;
+}
+body.dark #invoiceTable td button:hover {
+  background: #991111;
+}
+body.dark #clientList li button {
+  background: #bb4444;
+}
+body.dark #clientList li button:hover {
+  background: #991111;
+}
